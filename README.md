@@ -72,7 +72,7 @@ DATABASE_URL="postgresql://postgres:admin@localhost:5432/db-dev"
 Finally, run the following command to start the PostgreSQL container:
 
 ```bash
-docker-compose up
+docker compose up
 ```
 
 ## Step 5: Using Prisma in Next.js
@@ -144,7 +144,7 @@ Here are all of the commands you now need to run every time you want to start th
 
 ```bash
 npm run dev
-docker-compose up
+docker compose up
 npx prisma studio
 ```
 
