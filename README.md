@@ -26,7 +26,7 @@ Next, install the required dependencies for Prisma:
 
 ```bash
 npm install prisma --save-dev
-npm install @prima/client
+npm install @prisma/client
 ```
 
 ## Step 3: Initialize Prisma
