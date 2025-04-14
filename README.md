@@ -64,12 +64,12 @@ To set up PostgreSQL, add the following to the `compose.yml` file:
 
 ```yml
 services:
-	db:  
-		image:  postgres:15-alpine  
-		environment:  
-			POSTGRES_PASSWORD:  admin  
-		ports:  
-			-  "5432:5432"`
+db:  
+image:  postgres:15-alpine  
+environment:  
+POSTGRES_PASSWORD:  admin  
+ports:  
+-  "5432:5432"`
 ```
 
 Next, edit the `.env` file in the root directory and add the following:
