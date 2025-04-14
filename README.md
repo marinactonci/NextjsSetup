@@ -64,12 +64,12 @@ To set up PostgreSQL, add the following to the `compose.yml` file:
 
 ```yml
 services:
-	db:  
-		image:  postgres:15-alpine  
-	environment:  
-		POSTGRES_PASSWORD:  admin  
-	ports:  
-		-  "5432:5432"`
+  db:  
+    image:  postgres:15-alpine  
+    environment:  
+      POSTGRES_PASSWORD:  admin  
+    ports:  
+      -  "5432:5432"
 ```
 
 Next, edit the `.env` file in the root directory and add the following:
@@ -93,18 +93,18 @@ docker compose up
 Create a Prisma client instance. Inside the `lib` folder, create a `db.ts` file:
 
 ```ts
-import { PrismaClient } from  "@prisma/client"; 
-const  prismaClientSingleton = () => { 
-	return  new  PrismaClient();
-}; 
+import { PrismaClient } from "@prisma/client";
+const prismaClientSingleton = () => {
+  return new PrismaClient();
+};
 
-declare  const  globalThis: { 
-	prismaGlobal: ReturnType<typeof prismaClientSingleton>;
-} & typeof  global; 
+declare const globalThis: {
+  prismaGlobal: ReturnType<typeof prismaClientSingleton>;
+} & typeof global;
 
-const prisma = globalThis.prismaGlobal ?? prismaClientSingleton(); 
+const prisma = globalThis.prismaGlobal ?? prismaClientSingleton();
 
-export  default prisma; 
+export default prisma;
 
 if (process.env.NODE_ENV !== "production") globalThis.prismaGlobal = prisma;
 ```
