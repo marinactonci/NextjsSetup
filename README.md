@@ -1,7 +1,17 @@
 
 # ⚙️ Setting Up a Next.js Project with Prisma, PostgreSQL, and Docker
 
-This guide will walk you through setting up a **Next.js** project integrated with **Prisma** as an ORM and **PostgreSQL** as the database, all running in a **Dockerized** environment.
+This guide focuses specifically on setting up the database and ORM part of a Next.js project — using Prisma and PostgreSQL, all within a Dockerized environment.
+
+For other parts of building a full-featured web app — such as authentication, email handling, and payments — I recommend using the excellent official documentation from the libraries themselves. In my own projects, I typically use:
+
+- 🔐 [Auth.js](https://authjs.dev/), [Better Auth](https://www.better-auth.com/) or [Clerk](https://clerk.com/) for authentication
+
+- 📧 [Resend](https://resend.com/) for email services
+
+- 💳 [Stripe](https://stripe.com/) for handling payments
+
+Each of these tools is well-documented and integrates smoothly with Next.js, so this guide skips those and focuses purely on setting up the backend database layer with Prisma.
 
 ## ✅ Prerequisites
 
