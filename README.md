@@ -18,11 +18,9 @@ Make sure you have the following installed:
 
 First, create a new Next.js application:
 
-bash
-
-CopyEdit
-
-`npx create-next-app@latest my-app cd my-app` 
+```bash
+npx create-next-app@latest my-app cd my-app 
+```
 
 > ⚠️ **Note**: Latest Next.js version is `15.0.3` which uses React 19. Since many UI libraries and npm packages don't yet support React 19, it's recommended to replace `@latest` with `@14.2.18` for now.
 
