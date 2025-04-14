@@ -1,3 +1,4 @@
+
 # Setting Up a Next.js Project with Prisma, PostgreSQL, and Docker
 
 This guide will walk you through setting up a Next.js project integrated with Prisma as an ORM and PostgreSQL as the database, all running in a Dockerized environment.
@@ -118,13 +119,13 @@ model User {
 }
 ```
 
-After you finished editing the `schema.prisma` file, run the following command to create the database itself:
+After editing the `schema.prisma` file, run the following commands to sync the schema with your database and regenerate the Prisma Client:
 
 ```bash
 npx prisma db push
+npx prisma generate
 ```
-
-> Note: use the `npx prisma db push` while in development. In production, you should use `npx prisma db migrate` to apply changes to the database.
+> Note: `db push` is fast and ideal for prototyping, but doesn't create migration files. Use `npx prisma migrate dev` (in dev) or `npx prisma migrate deploy` (in production) when you need proper migration history.
 
 ## Step 7: Verify Database Data
 
@@ -135,6 +136,8 @@ npx prisma studio
 ```
 
 Prisma Studio will open in your browser, allowing you to view and modify data.
+
+> Note: add `--browser none` flag so that it doesn't automatically open your browser.
 
 ## Summary
 
@@ -148,8 +151,9 @@ docker compose up
 npx prisma studio
 ```
 
-On each change in the `schema.prisma` file, run the following command to apply the changes to the database:
+On each change in the `schema.prisma` file, run the following commands to apply the changes to the database and to update the Prisma client:
 
 ```bash
 npx prisma db push
+npx prisma generate
 ```
